@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin:0px;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins';
+}
+/*ŠTÝLY PRE FONTY*/
+h1{
+  font-size:60px;
+}
+h2{
+  font-size:40px;
+}
+h3{
+  font-size:35px;
+}
+h4,h5,h6{
+  font-size:20px;
+}
+p{
+  font-size:25px;
+}
+h1,h2,h3,h4,h5,h6,p,a,li{
+  margin-bottom: 0.7em;
+}
+main{
+  margin-top:60px;
+}
+/*každý druhý section element 
+bude mať sivé pozadie*/
+main section:nth-child(even){
+  background-color: #f7f7f7;
+}
+/*ŠTÝLY PRE HEADER*/
+header{
+  position: fixed;  
+  top:0;
+  left:0;
+  right:0;
+  height:60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(82, 83, 71);
+  z-index: 1; 
+  max-width: 100%; 
+}
+.main-menu li{
+  display:inline;
+  margin-left: 20px;
+}
+.main-menu li a{
+  text-decoration: none;
+  color:black;
+}
+.main-menu li:hover a{
+ text-decoration: underline;
+}
+.hamburger{
+  display: none;
+}
+
+/*ŠTÝLY PRE LAYOUT*/
+.container{
+  padding:3% 10% 3% 10%;
+}
+.row{
+  display:flex;
+  flex-direction: row;
+  padding: 25px 0px;
+  gap:20px;
+}
+/*šírka stĺpcov .col, ktoré sa nachádzajú pod class .row*/
+.row .col-25{
+  width:25%;
+}
+.row .col-33{
+  width:33%;
+}
+.row .col-50{
+  width:50%;
+}
+.row .col-100{
+  width:100%;
+}
+/*FARBY POZADIA*/
+.bg-dark{
+  background-color:rgb(25, 25, 25);
+}
+/*FARBY TEXTOV*/
+.text-dark{
+  color:rgb(25, 25, 25);
+}
+.text-white{
+  color:white;
+}
+
+/*ZAROVNANIE TEXTOV*/
+.text-center{
+  text-align:center;
+}
+.text-left{
+  text-align:left;
+}
+.text-right{
+  text-align:right;
+}
+
+/*FOOTER*/
+
+footer p a{
+  text-decoration: none;
+  color:white;
+}
+@media screen and (max-width: 600px) {
+  main{
+    margin-top:0px;
+  }
+  h1{
+    font-size:40px;
+  }
+  h2{
+    font-size:30px;
+  }
+  .row{
+    flex-direction: column;
+  }
+  .row .col-25, .row .col-33, .row .col-50{
+    width: 100%;
+  }
+  .main-menu{
+    display: none;
+  }
+  .hamburger {
+    display: inline;
+  }
+  .main-header{
+    position:relative;
+    top:0px;
+  }
+
+  /*ŠTÝLY PRE HEADER*/
+  .main-menu{
+    display: none;
+  }
+  .hamburger {
+    display: inline;
+  }
+  .main-header{
+    position:relative;
+    top:0px;
+  }
+  .main-menu.responsive {
+    display: block;
+    position: absolute;
+    background-color: #f7f7f7;
+    width:100%;
+    top:60px;
+    left:0px;
+    padding-top:20px;
+    padding-bottom:20px;
+  }
+  .main-menu.responsive li{
+    display: block;
+    margin-left:0px;
+  }  
+  
+}
+
+.slides-container {
+  position: relative;  
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  
+}
+.slide, .slide img{
+    width:100%;   
+    height: auto; 
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.slide-text {
+  color: #f2f2f2;
+  font-size: 5vw;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 50%;
+  max-width: 100%;
+  width:100%;
+  text-align: center;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.text1{
+  color: black;
+}
+
+
+#accordion{
+  margin: 100px;
+}
+
+#accordion li{
+  list-style: none;
+  width: 100%;
+  margin-bottom: 10px;
+  background: rgb(82, 83, 71);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#accordion li label{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#accordion li label span{
+ transform: rotate(90deg);
+ font-size: 22px;
+ color: #fff; 
+}
+
+#accordion label + input[type="radio"]{
+  display: none;
+}
+
+#accordion .content{
+ padding: 0 10px;
+ line-height: 26px;
+ max-height: 0;
+ overflow: hidden;
+ transition: max-height 0.5s; 
+}
+
+#accordion label + input[type="radio"]:checked + .content{
+  max-height: 400px;
+}
+
+.content p{
+  font-size: 25px;
+  text-align: center;
+}
+
+:root {
+  --motion-ease: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --motion-duration: 0.3s;
+}
+
+
+button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: black;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1;
+  padding: 1em 1.5em;
+  position: relative;
+  transition: filter var(--motion-duration);
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+button:active {
+  filter: brightness(0.9);
+}
+
+button > span {
+  display: block;
+  position: relative;
+  transition: transform var(--motion-duration) var(--motion-ease);
+  z-index: 1;
+}
+
+button:hover > span {
+  transform: scale(1.05);
+}
+
+button:active > span {
+  transform: scale(0.95);
+}
+
+button > svg {
+  fill: white;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+}
+
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+}
+
