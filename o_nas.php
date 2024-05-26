@@ -14,21 +14,19 @@
       <a id="next" class="next">❯</a>
       
     </section>
-
     <div class="text1">
-      <ul id="accordion">
-        <?php
-          $tickets = new Tickets();
-          echo($tickets->tickets());
-        ?>
-    </ul>
+      <?php
+        $articles = new Onas();
+        echo($articles->articles());
+      ?>
+    </div>
   </main>
 
     
     
 <?php
 
-require 'other\footer.php';
+require 'other/footer.php';
 
 ?>
 

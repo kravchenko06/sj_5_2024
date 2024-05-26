@@ -1,5 +1,5 @@
 <?php
-  require 'mod\db.php';
+  require('mod/functions.php');
 
 ?>
 
@@ -17,12 +17,21 @@
           <h1 class="logo">Dunajská liga</h1>
       </div>
     <nav class="main-nav">
-      <ul class="main-menu" id="main-menu">
+      <!--<ul class="main-menu" id="main-menu">
           <li><a href="index.php">Domov</a></li>
           <li><a href="O nas.php">O nás</a></li>
           <li><a href="Tickets.php">Vstupenky</a></li>
           <li><a href="kontakts.php">Kontakt</a></li>
-      </ul>
+      </ul>-->
+      <?php
+        $pages = array('Domov'=>'index.php',
+                      'O nás'=>'o_nas.php',
+                      'Vstupenky'=>'tickets.php',
+                      'Kontakt'=>'kontakts.php');
+        //echo(generate_menu($pages));
+        $menu = new Menu($pages);
+        echo($menu->generate_menu());
+      ?>
       <a class="hamburger" id="hamburger">
           <i class="fa fa-bars"></i>
       </a>

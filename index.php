@@ -7,11 +7,16 @@
   
   <main>
 
-    <?php
-    
-    require 'other\slides.php';
-
-    ?>
+  <section class="slides-container">
+      <?php
+        $slider = new Slider();
+        echo($slider->slider());
+      ?>
+      
+      <a id="prev" class="prev">❮</a>
+      <a id="next" class="next">❯</a>
+      
+    </section>
 
 
     <div class="text1">
@@ -22,11 +27,12 @@
     </div>
   </main>
 
-  <?php
-  
-  require 'other\pictures.php';
-  
-  ?>  
+  <div class="text3">
+            <?php
+              $index = new Index();
+              echo($index->index());
+            ?>
+    </div> 
 
   <?php 
   
