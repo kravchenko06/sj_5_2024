@@ -17,20 +17,22 @@
           <h1 class="logo">Dunajská liga</h1>
       </div>
     <nav class="main-nav">
-      <!--<ul class="main-menu" id="main-menu">
-          <li><a href="index.php">Domov</a></li>
-          <li><a href="O nas.php">O nás</a></li>
-          <li><a href="Tickets.php">Vstupenky</a></li>
-          <li><a href="kontakts.php">Kontakt</a></li>
-      </ul>-->
+      
       <?php
         $pages = array('Domov'=>'index.php',
                       'O nás'=>'o_nas.php',
                       'Vstupenky'=>'tickets.php',
                       'Kontakt'=>'kontakts.php');
-        //echo(generate_menu($pages));
+        
         $menu = new Menu($pages);
         echo($menu->generate_menu());
+        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
+          echo '<li><a href="logout.php" class="button">Log out</a></li>';
+        } else {
+          echo '<li><a href="login.php" class="button">Log in</a></li>';
+          echo '<li><a href="register.php" class="button">Register</a></li>';
+        }
+
       ?>
       <a class="hamburger" id="hamburger">
           <i class="fa fa-bars"></i>
